@@ -19,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      {" "}
       {/* Added dark class to enable dark mode by default */}
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>
