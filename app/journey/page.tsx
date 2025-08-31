@@ -135,7 +135,7 @@ export default function JourneyPage() {
                   <div>
                     <CardTitle className="text-white flex items-center gap-2">
                       <Calendar className="w-5 h-5 neuro21-accent" />
-                      Today's Goals
+                      Today&apos;s Goals
                     </CardTitle>
                     <CardDescription className="neuro21-secondary-text">
                       Score each goal from 0-10 based on your progress today
@@ -216,7 +216,7 @@ export default function JourneyPage() {
                     ) : (
                       <div className="flex items-center gap-2">
                         <Award className="w-4 h-4" />
-                        Submit Today's Progress
+                        Submit Today&apos;s Progress
                       </div>
                     )}
                   </Button>
@@ -238,7 +238,7 @@ export default function JourneyPage() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="grid grid-cols-7 gap-2">
-                    {mockWeeklyProgress.map((day, index) => (
+                    {mockWeeklyProgress.map((day) => (
                       <div key={day.date} className="text-center">
                         <div className="text-xs neuro21-secondary-text mb-2">
                           {new Date(day.date).toLocaleDateString("en", { weekday: "short" })}

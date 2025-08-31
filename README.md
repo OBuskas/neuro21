@@ -7,7 +7,7 @@ Through daily goals — such as exercise, nutrition, and sleep — users earn to
 The ecosystem creates a balance of **community support and professional care**:  
 - Users are motivated to build healthier habits with real incentives.  
 - Psychologists and psychiatrists contribute with free monthly sessions while also offering paid consultations.  
-- Tokens circulate between users and professionals, fostering a sustainable and accessible mental health network.  
+- $ADHD Tokens circulate between users and professionals, fostering a sustainable and accessible mental health network.  
 
 With its **gamified experience, token economy, and dual perspectives (patient and professional)**, Neuro21 blends technology, psychology, and Web3 innovation to make mental health care more **accessible, dynamic, and impactful**.
 

@@ -8,8 +8,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Navigation } from "@/components/navigation"
-import { TokenDisplay } from "@/components/token-display"
+import { Navigation } from "@/components/neuro21/navigation"
+import { TokenDisplay } from '@/components/neuro21/token-display'
 import {
   User,
   Edit3,
@@ -108,7 +108,7 @@ export default function ProfilePage() {
               Overview
             </TabsTrigger>
             <TabsTrigger value="tokens" className="data-[state=active]:bg-yellow-400 data-[state=active]:text-gray-900">
-              Tokens
+              $ADHD
             </TabsTrigger>
             <TabsTrigger
               value="progress"
@@ -216,7 +216,7 @@ export default function ProfilePage() {
                     <div className="text-center space-y-4">
                       <TokenDisplay balance={mockUser.tokenBalance} className="text-3xl justify-center" />
                       <div className="text-sm neuro21-secondary-text">
-                        Total earned: {mockUser.totalTokensEarned.toLocaleString()} tokens
+                        Total earned: {mockUser.totalTokensEarned.toLocaleString()} $ADHD
                       </div>
                     </div>
                   </CardContent>
@@ -335,7 +335,7 @@ export default function ProfilePage() {
                   <CardContent className="space-y-3">
                     <Button className="w-full neuro21-accent-bg hover:bg-yellow-500 text-gray-900">
                       <Target className="w-4 h-4 mr-2" />
-                      Book Session (630 tokens)
+                      Book Session (630 $ADHD)
                     </Button>
                     <Button
                       variant="outline"
@@ -371,11 +371,11 @@ export default function ProfilePage() {
                   <div className="space-y-4">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-white">342</div>
-                      <div className="text-sm neuro21-secondary-text">Tokens earned this month</div>
+                      <div className="text-sm neuro21-secondary-text">$ADHD earned this month</div>
                     </div>
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
-                        <span className="neuro21-secondary-text">Goal: 400 tokens</span>
+                        <span className="neuro21-secondary-text">Goal: 400 $ADHD</span>
                         <span className="text-white">85.5%</span>
                       </div>
                       <div className="w-full bg-gray-700 rounded-full h-2">

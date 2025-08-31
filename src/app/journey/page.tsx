@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
-import { Navigation } from "@/components/navigation"
-import { TokenDisplay } from "@/components/token-display"
+import { Navigation } from "@/components/neuro21/navigation"
+import { TokenDisplay } from '@/components/neuro21/token-display'
 import { Dumbbell, Apple, Moon, TrendingUp, Calendar, Target, Award, Flame, CheckCircle, Clock } from "lucide-react"
 import type { JourneyGoal } from "@/lib/types"
 
@@ -135,7 +135,7 @@ export default function JourneyPage() {
                   <div>
                     <CardTitle className="text-white flex items-center gap-2">
                       <Calendar className="w-5 h-5 neuro21-accent" />
-                      Today's Goals
+                      Today&apos;s Goals
                     </CardTitle>
                     <CardDescription className="neuro21-secondary-text">
                       Score each goal from 0-10 based on your progress today
@@ -216,7 +216,7 @@ export default function JourneyPage() {
                     ) : (
                       <div className="flex items-center gap-2">
                         <Award className="w-4 h-4" />
-                        Submit Today's Progress
+                        Submit Today&apos;s Progress
                       </div>
                     )}
                   </Button>
@@ -238,7 +238,7 @@ export default function JourneyPage() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="grid grid-cols-7 gap-2">
-                    {mockWeeklyProgress.map((day, index) => (
+                    {mockWeeklyProgress.map((day) => (
                       <div key={day.date} className="text-center">
                         <div className="text-xs neuro21-secondary-text mb-2">
                           {new Date(day.date).toLocaleDateString("en", { weekday: "short" })}
@@ -259,7 +259,7 @@ export default function JourneyPage() {
                   </div>
                   <div className="text-center">
                     <div className="text-sm neuro21-secondary-text">
-                      Total this week: <span className="text-white font-medium">58 tokens</span>
+                      Total this week: <span className="text-white font-medium">58 $ADHD</span>
                     </div>
                   </div>
                 </div>
@@ -305,7 +305,7 @@ export default function JourneyPage() {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="neuro21-secondary-text">This Month</span>
-                  <span className="text-white font-medium">342 tokens</span>
+                  <span className="text-white font-medium">342 $ADHD</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="neuro21-secondary-text">Tier Level</span>
@@ -355,7 +355,7 @@ export default function JourneyPage() {
                   <h3 className="text-white font-medium">Ready for a session?</h3>
                   <p className="text-sm neuro21-secondary-text">You have enough tokens to book a consultation</p>
                   <Button className="w-full neuro21-accent-bg hover:bg-yellow-500 text-gray-900">
-                    Book Session (630 tokens)
+                    Book Session (630 $ADHD)
                   </Button>
                 </div>
               </CardContent>

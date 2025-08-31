@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
-import { Navigation } from "@/components/navigation"
+import { Navigation } from "@/components/neuro21/navigation"
 import { Wallet, AlertCircle, CheckCircle, User, FileText } from "lucide-react"
 import Link from "next/link"
 

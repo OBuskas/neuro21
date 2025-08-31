@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Navigation } from "@/components/navigation"
+import { Navigation } from "@/components/neuro21/navigation"
 import { Wallet, AlertCircle, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
