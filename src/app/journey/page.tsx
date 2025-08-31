@@ -259,7 +259,7 @@ export default function JourneyPage() {
                   </div>
                   <div className="text-center">
                     <div className="text-sm neuro21-secondary-text">
-                      Total this week: <span className="text-white font-medium">58 $ADHD</span>
+                      Total this week: <span className="text-white font-medium">58 #HEAL</span>
                     </div>
                   </div>
                 </div>
@@ -305,7 +305,7 @@ export default function JourneyPage() {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="neuro21-secondary-text">This Month</span>
-                  <span className="text-white font-medium">342 $ADHD</span>
+                  <span className="text-white font-medium">342 #HEAL</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="neuro21-secondary-text">Tier Level</span>
@@ -355,7 +355,7 @@ export default function JourneyPage() {
                   <h3 className="text-white font-medium">Ready for a session?</h3>
                   <p className="text-sm neuro21-secondary-text">You have enough tokens to book a consultation</p>
                   <Button className="w-full neuro21-accent-bg hover:bg-yellow-500 text-gray-900">
-                    Book Session (630 $ADHD)
+                    Book Session (630 #HEAL)
                   </Button>
                 </div>
               </CardContent>

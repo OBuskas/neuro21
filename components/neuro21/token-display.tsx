@@ -10,7 +10,7 @@ export function TokenDisplay({ balance, className = "" }: TokenDisplayProps) {
     <div className={`flex items-center gap-2 ${className}`}>
       <Coins className="w-5 h-5 text-yellow-400" />
       <span className="font-semibold text-white">{balance.toLocaleString()}</span>
-      <span className="text-gray-400 text-sm">$ADHD</span>
+      <span className="text-gray-400 text-sm">#HEAL</span>
     </div>
   )
 }

@@ -12,7 +12,7 @@ export function TokenDisplay({ balance = 0, className = "" }: TokenDisplayProps)
       <Badge variant="outline" className="gap-1.5 px-3 py-1.5 text-sm">
         <Flame className="h-4 w-4 text-amber-500" />
         <span className="font-mono font-medium">{balance.toLocaleString()}</span>
-        <span>$ADHD</span>
+        <span>#HEAL</span>
       </Badge>
     </div>
   )
