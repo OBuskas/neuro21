@@ -1,3 +1,16 @@
+## 🧠 About Neuro21
+
+Neuro21 is a **Web3 gamified platform** that empowers people with different neurodivergences to improve their treatment journey in an engaging and rewarding way.  
+
+Through daily goals — such as exercise, nutrition, and sleep — users earn tokens that can be exchanged for consultations with psychologists and psychiatrists registered on the platform.  
+
+The ecosystem creates a balance of **community support and professional care**:  
+- Users are motivated to build healthier habits with real incentives.  
+- Psychologists and psychiatrists contribute with free monthly sessions while also offering paid consultations.  
+- Tokens circulate between users and professionals, fostering a sustainable and accessible mental health network.  
+
+With its **gamified experience, token economy, and dual perspectives (patient and professional)**, Neuro21 blends technology, psychology, and Web3 innovation to make mental health care more **accessible, dynamic, and impactful**.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
