@@ -34,7 +34,7 @@ export function Navigation({ userType = "user", tokenBalance = 0 }: NavigationPr
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center">
-              <span className="text-gray-900 font-bold text-lg">N21</span>
+              <img src="/brain.svg" alt="Brain icon" className="w-8 h-8" />
             </div>
             <span className="text-white font-bold text-xl">Neuro21</span>
           </Link>

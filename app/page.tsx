@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/neuro21/navigation"
 import { TokenDisplay } from "@/components/neuro21/token-display"
+import BrainIcon from "@/assets/brain.svg"
 import {
   Brain,
   Target,
@@ -341,7 +342,7 @@ export default function HomePage() {
             <div className="col-span-2">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-900 font-bold text-lg">N21</span>
+                  <img src="/brain.svg" alt="Brain icon" className="w-8 h-8" />
                 </div>
                 <span className="text-white font-bold text-xl">Neuro21</span>
               </div>
