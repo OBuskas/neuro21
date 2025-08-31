@@ -17,7 +17,7 @@ import type { JourneyGoal } from "@/lib/types"
 const initialGoals: JourneyGoal[] = [
   {
     id: "exercise",
-    name: "Exercício",
+    name: "Exercise",
     description: "Physical activity and movement",
     score: 0,
     maxScore: 10,
@@ -25,7 +25,7 @@ const initialGoals: JourneyGoal[] = [
   },
   {
     id: "nutrition",
-    name: "Alimentação",
+    name: "Nutrition",
     description: "Healthy eating and nutrition",
     score: 0,
     maxScore: 10,
@@ -33,7 +33,7 @@ const initialGoals: JourneyGoal[] = [
   },
   {
     id: "sleep",
-    name: "Sono",
+    name: "Sleep",
     description: "Quality sleep and rest",
     score: 0,
     maxScore: 10,
@@ -90,7 +90,7 @@ function JourneyContent() {
       if (totalScore >= 20) {
         // Simulate achievement unlock notification
         setTimeout(() => {
-          alert("🎉 ¡Nuevo Achievement Desbloqueado!\n\n🏆 Has completado tus primeras 5 metas diarias!")
+          alert("🎉 New Achievement Unlocked!\n\n🏆 You've completed your first 5 daily goals!")
         }, 1000)
       }
 

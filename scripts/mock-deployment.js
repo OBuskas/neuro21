@@ -1,4 +1,4 @@
-// Script para simular deployment y continuar desarrollo
+// Script to simulate deployment for development
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -10,10 +10,10 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.join(__dirname, '..', '.env.local') });
 
 function mockDeployment() {
-  console.log("🎭 DEPLOYMENT SIMULADO - Neuro21 Ready!");
+  console.log("🎭 MOCK DEPLOYMENT - Neuro21 Development Setup");
   console.log("=" .repeat(50));
 
-  // Simular direcciones de contrato
+  // Mock contract addresses
   const mockAddresses = {
     mainnet: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
     testnet: "0x8Ba1f109551bD432803012645Bcc23876055d4de",
@@ -21,8 +21,8 @@ function mockDeployment() {
   };
 
   console.log("✅ ADHD Token Contract Addresses:");
-  console.log(`   🌐 Base Mainnet: ${mockAddresses.mainnet}`);
-  console.log(`   🧪 Base Testnet: ${mockAddresses.testnet}`);
+  console.log(`   🌐 Mainnet: ${mockAddresses.mainnet}`);
+  console.log(`   🧪 Testnet: ${mockAddresses.testnet}`);
   console.log(`   🏠 Local: ${mockAddresses.local}`);
   console.log();
 
@@ -33,32 +33,31 @@ function mockDeployment() {
   console.log("   👑 Owner: Your wallet address");
   console.log();
 
-  console.log("✅ Mini App Status:");
+  console.log("✅ Application Status:");
   console.log("   🎮 Frontend: Ready");
   console.log("   🔐 Auth: Web3 + Email");
   console.log("   📊 Dashboard: Functional");
   console.log("   🎯 Journey: Complete");
   console.log();
 
-  console.log("🚀 Ready for Hackathon!");
-  console.log("📱 Demo: npm run demo");
+  console.log("🚀 Ready for Development!");
   console.log("🧪 Tests: npm run test:contract");
   console.log();
 
   console.log("💡 Next Steps:");
-  console.log("1. Get Base ETH: https://docs.base.org/tools/network-faucets");
+  console.log("1. Get testnet ETH from faucet");
   console.log("2. Real deploy: npm run deploy:testnet");
-  console.log("3. Verify: npm run verify -- --network baseGoerli CONTRACT_ADDRESS");
+  console.log("3. Verify: npm run verify -- --network testnet CONTRACT_ADDRESS");
   console.log();
 
-  // Actualizar .env.local con direcciones simuladas
+  // Update .env.local with simulated addresses
   const envPath = path.join(__dirname, '..', '.env.local');
-  console.log(`📝 Para usar en desarrollo, actualiza tu .env.local:`);
+  console.log(`📝 For development, update your .env.local:`);
   console.log(`ADHD_TOKEN_ADDRESS=${mockAddresses.local}`);
   console.log();
 
-  console.log("🎉 ¡Neuro21 está listo para impresionar en el hackathon!");
-  console.log("🏆 Base Mini Apps Track - ¡Vamos por el primer lugar!");
+  console.log("🎉 Neuro21 is ready for development!");
+  console.log("🚀 Let's build something amazing!");
 }
 
 mockDeployment();

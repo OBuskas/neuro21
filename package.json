@@ -18,8 +18,7 @@
     "deploy:base": "hardhat run scripts/deploy.js --network base",
     "deploy:testnet": "hardhat run scripts/deploy.js --network baseGoerli",
     "verify": "hardhat verify",
-    "demo": "npm run dev",
-    "show-demo": "node demo-script.js"
+
   },
   "dependencies": {
     "@coinbase/onchainkit": "latest",

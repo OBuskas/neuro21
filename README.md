@@ -1,8 +1,8 @@
 ## 🧠 About Neuro21
 
-Neuro21 is a **Base Mini App** that empowers people with different neurodivergences to improve their treatment journey in an engaging and rewarding way.
+Neuro21 is a comprehensive mental health platform that empowers neurodivergent individuals to improve their treatment journey through engaging gamification and blockchain rewards.
 
-Through daily goals — such as exercise, nutrition, and sleep — users earn **$ADHD tokens on Base** that can be exchanged for consultations with psychologists and psychiatrists registered on the platform.
+Through daily goals — such as exercise, nutrition, and sleep — users earn **$ADHD tokens** that can be exchanged for consultations with psychologists and psychiatrists registered on the platform.
 
 The ecosystem creates a balance of **community support and professional care**:
 - Users are motivated to build healthier habits with real incentives.
@@ -11,31 +11,21 @@ The ecosystem creates a balance of **community support and professional care**:
 
 With its **gamified experience, token economy, and dual perspectives (patient and professional)**, Neuro21 blends technology, psychology, and Web3 innovation to make mental health care more **accessible, dynamic, and impactful**.
 
-### 🎯 Base Mini Apps Track Submission
-
-This project is optimized for the **Base Mini Apps Track** with:
-- **Deployed on Base**: Smart contracts and token system on Base network
-- **Mini App Optimized**: Simple, snappy, and fun user experience
-- **Token Integration**: $ADHD ERC-20 token with reward mechanisms
-- **NFT Achievements**: Unique collectible NFTs for mental health milestones
-- **Viral Potential**: Gamified mental health with social sharing features
-
 ## 🚀 Technologies
 
 - **Frontend Framework**: [Next.js](https://nextjs.org/) (React) with TypeScript
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
 - **UI Components**: [shadcn/ui](https://ui.shadcn.com/) for accessible, customizable components
 - **State Management**: React Context API and Hooks
-- **Blockchain**: [Base](https://base.org) network with ERC-20 tokens
+- **Blockchain**: Ethereum-compatible networks with ERC-20 tokens
 - **Smart Contracts**: Solidity with OpenZeppelin
 - **Web3 Integration**: Ethers.js and Coinbase Wallet SDK
-- **Mini App Framework**: Base Mini Kit
-- **Deployment**: Vercel (optimized for Base ecosystem)
+- **Deployment**: Vercel for scalable web applications
 
 ## ✨ Key Features
 
 ### 🪙 Token Economy ($ADHD)
-- **ERC-20 Token**: Deployed on Base network
+- **ERC-20 Token**: Smart contract-based reward token
 - **Reward System**: Earn tokens by completing mental health activities
 - **Staking**: Lock tokens for premium benefits
 - **Marketplace**: Exchange tokens for professional consultations
