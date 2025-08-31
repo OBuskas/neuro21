@@ -1,15 +1,24 @@
 ## 🧠 About Neuro21
 
-Neuro21 is a **Web3 gamified platform** that empowers people with different neurodivergences to improve their treatment journey in an engaging and rewarding way.  
+Neuro21 is a **Base Mini App** that empowers people with different neurodivergences to improve their treatment journey in an engaging and rewarding way.
 
-Through daily goals — such as exercise, nutrition, and sleep — users earn tokens that can be exchanged for consultations with psychologists and psychiatrists registered on the platform.  
+Through daily goals — such as exercise, nutrition, and sleep — users earn **$ADHD tokens on Base** that can be exchanged for consultations with psychologists and psychiatrists registered on the platform.
 
-The ecosystem creates a balance of **community support and professional care**:  
-- Users are motivated to build healthier habits with real incentives.  
-- Psychologists and psychiatrists contribute with free monthly sessions while also offering paid consultations.  
-- $ADHD Tokens circulate between users and professionals, fostering a sustainable and accessible mental health network.  
+The ecosystem creates a balance of **community support and professional care**:
+- Users are motivated to build healthier habits with real incentives.
+- Psychologists and psychiatrists contribute with free monthly sessions while also offering paid consultations.
+- $ADHD Tokens circulate between users and professionals, fostering a sustainable and accessible mental health network.
 
 With its **gamified experience, token economy, and dual perspectives (patient and professional)**, Neuro21 blends technology, psychology, and Web3 innovation to make mental health care more **accessible, dynamic, and impactful**.
+
+### 🎯 Base Mini Apps Track Submission
+
+This project is optimized for the **Base Mini Apps Track** with:
+- **Deployed on Base**: Smart contracts and token system on Base network
+- **Mini App Optimized**: Simple, snappy, and fun user experience
+- **Token Integration**: $ADHD ERC-20 token with reward mechanisms
+- **NFT Achievements**: Unique collectible NFTs for mental health milestones
+- **Viral Potential**: Gamified mental health with social sharing features
 
 ## 🚀 Technologies
 
@@ -17,10 +26,37 @@ With its **gamified experience, token economy, and dual perspectives (patient an
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
 - **UI Components**: [shadcn/ui](https://ui.shadcn.com/) for accessible, customizable components
 - **State Management**: React Context API and Hooks
-- **Authentication**: NextAuth.js
-- **Blockchain**: Web3.js / Ethers.js for Web3 integration
-- **Database**: PostgreSQL with Prisma ORM
-- **Deployment**: Vercel
+- **Blockchain**: [Base](https://base.org) network with ERC-20 tokens
+- **Smart Contracts**: Solidity with OpenZeppelin
+- **Web3 Integration**: Ethers.js and Coinbase Wallet SDK
+- **Mini App Framework**: Base Mini Kit
+- **Deployment**: Vercel (optimized for Base ecosystem)
+
+## ✨ Key Features
+
+### 🪙 Token Economy ($ADHD)
+- **ERC-20 Token**: Deployed on Base network
+- **Reward System**: Earn tokens by completing mental health activities
+- **Staking**: Lock tokens for premium benefits
+- **Marketplace**: Exchange tokens for professional consultations
+
+### 🏆 NFT Achievements System
+- **ERC-721 NFTs**: Unique collectible achievements
+- **Milestone Tracking**: Unlock NFTs for mental health milestones
+- **Rarity System**: Common, Rare, Epic, and Legendary achievements
+- **Progress Visualization**: Beautiful achievement gallery
+
+### 🎮 Gamification Features
+- **Daily Goals**: Exercise, nutrition, sleep tracking
+- **Streak System**: Maintain consistency with rewards
+- **Progress Analytics**: Visual dashboard with insights
+- **Social Features**: Share achievements and progress
+
+### 🔐 Authentication
+- **Web3 Login**: MetaMask wallet integration
+- **Email Login**: Traditional authentication option
+- **Profile Management**: Personalized user experience
+- **Secure Sessions**: Protected routes and data
 
 ## 🛠️ Prerequisites
 

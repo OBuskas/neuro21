@@ -4,7 +4,8 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { TokenDisplay } from "./token-display"
-import { Menu, X, User, Home, Target } from "lucide-react"
+import { Menu, X, User, Home, Target, LogOut, Wallet, Award } from "lucide-react"
+import { useAuth } from "@/lib/auth-context"
 
 interface NavigationProps {
   userType?: "user" | "professional"
@@ -13,20 +14,29 @@ interface NavigationProps {
 
 export function Navigation({ userType = "user", tokenBalance = 0 }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { user, logout, connectWallet, disconnectWallet } = useAuth()
 
   const userNavItems = [
     { href: "/", label: "Home", icon: Home },
     { href: "/journey", label: "Journey", icon: Target },
+    { href: "/achievements", label: "Achievements", icon: Award },
     { href: "/profile", label: "Profile", icon: User },
   ]
 
   const professionalNavItems = [
     { href: "/", label: "Home", icon: Home },
     { href: "/dashboard", label: "Dashboard", icon: Target },
+    { href: "/achievements", label: "Achievements", icon: Award },
     { href: "/profile", label: "Profile", icon: User },
   ]
 
-  const navItems = userType === "professional" ? professionalNavItems : userNavItems
+  const navItems = (user?.type === "professional" ? professionalNavItems : userNavItems).filter(item => {
+    // Hide authenticated routes if not logged in
+    if (!user?.isAuthenticated && ["/journey", "/dashboard", "/achievements", "/profile"].includes(item.href)) {
+      return false
+    }
+    return true
+  })
 
   return (
     <nav className="neuro21-card border-b border-gray-700 sticky top-0 z-50">
@@ -51,7 +61,56 @@ export function Navigation({ userType = "user", tokenBalance = 0 }: NavigationPr
                 <span>{item.label}</span>
               </Link>
             ))}
-            {userType === "user" && <TokenDisplay balance={tokenBalance} />}
+
+            {/* Authentication Section */}
+            {user?.isAuthenticated ? (
+              <div className="flex items-center space-x-4">
+                {user.type === "user" && <TokenDisplay balance={user.tokenBalance} />}
+
+                {/* Wallet Status */}
+                {user.walletConnected ? (
+                  <Button
+                    onClick={disconnectWallet}
+                    variant="outline"
+                    size="sm"
+                    className="border-green-500 text-green-400 hover:bg-green-500/10"
+                  >
+                    <Wallet className="w-4 h-4 mr-2" />
+                    Connected
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={connectWallet}
+                    variant="outline"
+                    size="sm"
+                    className="border-yellow-500 text-yellow-400 hover:bg-yellow-500/10"
+                  >
+                    <Wallet className="w-4 h-4 mr-2" />
+                    Connect Wallet
+                  </Button>
+                )}
+
+                {/* Logout */}
+                <Button
+                  onClick={logout}
+                  variant="outline"
+                  size="sm"
+                  className="border-gray-600 text-white hover:bg-gray-800"
+                >
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Logout
+                </Button>
+              </div>
+            ) : (
+              <div className="flex items-center space-x-4">
+                <Button asChild variant="outline" size="sm" className="border-gray-600 text-white hover:bg-gray-800">
+                  <Link href="/auth/login">Login</Link>
+                </Button>
+                <Button asChild size="sm" className="neuro21-accent-bg hover:bg-yellow-500 text-gray-900">
+                  <Link href="/auth/register">Sign Up</Link>
+                </Button>
+              </div>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -77,11 +136,67 @@ export function Navigation({ userType = "user", tokenBalance = 0 }: NavigationPr
                   <span>{item.label}</span>
                 </Link>
               ))}
-              {userType === "user" && (
-                <div className="pt-2 border-t border-gray-700">
-                  <TokenDisplay balance={tokenBalance} />
-                </div>
-              )}
+
+              {/* Mobile Authentication Section */}
+              <div className="pt-2 border-t border-gray-700 space-y-3">
+                {user?.isAuthenticated ? (
+                  <>
+                    {user.type === "user" && <TokenDisplay balance={user.tokenBalance} />}
+
+                    {/* Wallet Status */}
+                    {user.walletConnected ? (
+                      <Button
+                        onClick={() => {
+                          disconnectWallet()
+                          setIsMenuOpen(false)
+                        }}
+                        variant="outline"
+                        size="sm"
+                        className="w-full border-green-500 text-green-400 hover:bg-green-500/10"
+                      >
+                        <Wallet className="w-4 h-4 mr-2" />
+                        Wallet Connected
+                      </Button>
+                    ) : (
+                      <Button
+                        onClick={() => {
+                          connectWallet()
+                          setIsMenuOpen(false)
+                        }}
+                        variant="outline"
+                        size="sm"
+                        className="w-full border-yellow-500 text-yellow-400 hover:bg-yellow-500/10"
+                      >
+                        <Wallet className="w-4 h-4 mr-2" />
+                        Connect Wallet
+                      </Button>
+                    )}
+
+                    {/* Logout */}
+                    <Button
+                      onClick={() => {
+                        logout()
+                        setIsMenuOpen(false)
+                      }}
+                      variant="outline"
+                      size="sm"
+                      className="w-full border-gray-600 text-white hover:bg-gray-800"
+                    >
+                      <LogOut className="w-4 h-4 mr-2" />
+                      Logout
+                    </Button>
+                  </>
+                ) : (
+                  <div className="space-y-2">
+                    <Button asChild variant="outline" size="sm" className="w-full border-gray-600 text-white hover:bg-gray-800">
+                      <Link href="/auth/login" onClick={() => setIsMenuOpen(false)}>Login</Link>
+                    </Button>
+                    <Button asChild size="sm" className="w-full neuro21-accent-bg hover:bg-yellow-500 text-gray-900">
+                      <Link href="/auth/register" onClick={() => setIsMenuOpen(false)}>Sign Up</Link>
+                    </Button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         )}

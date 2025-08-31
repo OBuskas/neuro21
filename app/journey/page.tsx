@@ -8,16 +8,11 @@ import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
 import { Navigation } from "@/components/neuro21/navigation"
 import { TokenDisplay } from "@/components/neuro21/token-display"
-import { Dumbbell, Apple, Moon, TrendingUp, Calendar, Target, Award, Flame, CheckCircle, Clock } from "lucide-react"
+import { ProtectedRoute } from "@/components/auth/protected-route"
+import { useAuth } from "@/lib/auth-context"
+import { Dumbbell, Apple, Moon, TrendingUp, Calendar, Target, Award, Flame, CheckCircle, Clock, Trophy } from "lucide-react"
+import Link from "next/link"
 import type { JourneyGoal } from "@/lib/types"
-
-// Mock data for demonstration
-const mockUser = {
-  tokenBalance: 1247,
-  plan: "premium" as const,
-  tier: 3,
-  streak: 7,
-}
 
 const initialGoals: JourneyGoal[] = [
   {
@@ -56,10 +51,19 @@ const mockWeeklyProgress = [
   { date: "2024-01-21", tokensEarned: 8, completed: true },
 ]
 
-export default function JourneyPage() {
+function JourneyContent() {
+  const { user } = useAuth()
   const [goals, setGoals] = useState<JourneyGoal[]>(initialGoals)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [todayCompleted, setTodayCompleted] = useState(false)
+
+  // Use real user data if available, otherwise use defaults
+  const currentUser = user || {
+    tokenBalance: 100,
+    plan: "free" as const,
+    tier: 1,
+    streak: 0,
+  }
 
   const totalScore = goals.reduce((sum, goal) => sum + goal.score, 0)
   const maxTotalScore = goals.reduce((sum, goal) => sum + goal.maxScore, 0)
@@ -67,7 +71,7 @@ export default function JourneyPage() {
 
   // Calculate potential tokens based on plan
   const baseTokens = 10
-  const multiplier = mockUser.plan === "premium" ? 3 : 1
+  const multiplier = currentUser.plan === "premium" ? 3 : 1
   const potentialTokens = Math.round((totalScore / maxTotalScore) * baseTokens * multiplier)
 
   const updateGoalScore = (goalId: string, newScore: number) => {
@@ -80,6 +84,16 @@ export default function JourneyPage() {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500))
       setTodayCompleted(true)
+
+      // Simulate achievement unlock
+      const totalScore = goals.reduce((sum, goal) => sum + goal.score, 0)
+      if (totalScore >= 20) {
+        // Simulate achievement unlock notification
+        setTimeout(() => {
+          alert("🎉 ¡Nuevo Achievement Desbloqueado!\n\n🏆 Has completado tus primeras 5 metas diarias!")
+        }, 1000)
+      }
+
       // In real app, this would update the user's token balance
     } catch (error) {
       console.error("Failed to submit progress:", error)
@@ -103,7 +117,7 @@ export default function JourneyPage() {
 
   return (
     <div className="min-h-screen">
-      <Navigation userType="user" tokenBalance={mockUser.tokenBalance} />
+      <Navigation />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
@@ -116,10 +130,10 @@ export default function JourneyPage() {
             <div className="flex items-center gap-4">
               <Badge className="neuro21-accent-bg">
                 <Flame className="w-4 h-4 mr-1" />
-                {mockUser.streak} day streak
+                {currentUser.streak} day streak
               </Badge>
               <Badge variant="outline" className="border-gray-600 text-gray-300">
-                Tier {mockUser.tier}
+                Tier {currentUser.tier}
               </Badge>
             </div>
           </div>
@@ -276,9 +290,9 @@ export default function JourneyPage() {
               </CardHeader>
               <CardContent>
                 <div className="text-center space-y-4">
-                  <TokenDisplay balance={mockUser.tokenBalance} className="text-2xl justify-center" />
+                  <TokenDisplay balance={currentUser.tokenBalance} className="text-2xl justify-center" />
                   <div className="text-sm neuro21-secondary-text">
-                    {mockUser.plan === "premium" ? "Premium Plan - 3x earning rate" : "Free Plan - Standard rate"}
+                    {currentUser.plan === "premium" ? "Premium Plan - 3x earning rate" : "Free Plan - Standard rate"}
                   </div>
                   <Button
                     variant="outline"
@@ -300,7 +314,7 @@ export default function JourneyPage() {
                   <span className="neuro21-secondary-text">Current Streak</span>
                   <div className="flex items-center gap-1">
                     <Flame className="w-4 h-4 text-orange-400" />
-                    <span className="text-white font-medium">{mockUser.streak} days</span>
+                    <span className="text-white font-medium">{currentUser.streak} days</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
@@ -310,12 +324,62 @@ export default function JourneyPage() {
                 <div className="flex items-center justify-between">
                   <span className="neuro21-secondary-text">Tier Level</span>
                   <Badge variant="outline" className="border-yellow-400 text-yellow-400">
-                    Tier {mockUser.tier}
+                    Tier {currentUser.tier}
                   </Badge>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="neuro21-secondary-text">Sessions Available</span>
                   <span className="text-white font-medium">1.9</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Achievements Progress */}
+            <Card className="neuro21-card">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center gap-2">
+                  <Award className="w-5 h-5 neuro21-accent" />
+                  Next Achievement
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-yellow-400/20 rounded-lg flex items-center justify-center">
+                      <Trophy className="w-5 h-5 text-yellow-400" />
+                    </div>
+                    <div>
+                      <div className="text-white font-medium">Month Master</div>
+                      <div className="text-sm neuro21-secondary-text">30-day streak</div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="neuro21-secondary-text">Progress</span>
+                      <span className="text-white">22/30 days</span>
+                    </div>
+                    <div className="w-full bg-gray-700 rounded-full h-2">
+                      <div
+                        className="bg-yellow-400 h-2 rounded-full"
+                        style={{ width: "73%" }}
+                      />
+                    </div>
+                    <div className="text-center">
+                      <span className="text-xs neuro21-secondary-text">
+                        8 more days to unlock
+                      </span>
+                    </div>
+                  </div>
+
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-yellow-400 text-yellow-400 hover:bg-yellow-400/10"
+                    asChild
+                  >
+                    <Link href="/achievements">View All Achievements</Link>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -364,5 +428,13 @@ export default function JourneyPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function JourneyPage() {
+  return (
+    <ProtectedRoute requiredAuth={true}>
+      <JourneyContent />
+    </ProtectedRoute>
   )
 }

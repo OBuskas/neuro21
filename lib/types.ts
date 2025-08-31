@@ -1,6 +1,6 @@
 export interface User {
   id: string
-  metamaskId: string
+  metamaskId?: string
   name: string
   email: string
   bio: string
@@ -8,8 +8,16 @@ export interface User {
   plan: "free" | "premium"
   tier: number
   nextBillingDate?: string
-  connectedWallet: string
+  connectedWallet?: string
   type: "user" | "professional"
+  isAuthenticated: boolean
+  walletConnected: boolean
+}
+
+export interface AuthState {
+  user: User | null
+  isLoading: boolean
+  error: string | null
 }
 
 export interface Professional extends User {
