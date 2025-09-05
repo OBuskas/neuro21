@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Navigation } from "@/components/neuro21/navigation"
-import { TokenDisplay } from "@/components/neuro21/token-display"
+import { TokenDisplay } from '@/components/neuro21/token-display'
 import {
   User,
   Edit3,
@@ -371,7 +371,7 @@ export default function ProfilePage() {
                   <div className="space-y-4">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-white">342</div>
-                      <div className="text-sm neuro21-secondary-text">Tokens earned this month</div>
+                      <div className="text-sm neuro21-secondary-text">#HEAL earned this month</div>
                     </div>
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">

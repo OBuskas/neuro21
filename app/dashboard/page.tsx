@@ -176,7 +176,7 @@ export default function ProfessionalDashboard() {
                 <CardContent className="pt-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm neuro21-secondary-text">Today's Earnings</p>
+                      <p className="text-sm neuro21-secondary-text">Today&#39;s Earnings</p>
                       <p className="text-2xl font-bold text-white">${professional.todayEarnings}</p>
                     </div>
                     <DollarSign className="w-8 h-8 neuro21-accent" />
@@ -230,7 +230,7 @@ export default function ProfessionalDashboard() {
                   <CardHeader>
                     <CardTitle className="text-white flex items-center gap-2">
                       <Clock className="w-5 h-5 neuro21-accent" />
-                      Today's Schedule
+                      Today&#39;s Schedule
                     </CardTitle>
                     <CardDescription className="neuro21-secondary-text">
                       {new Date().toLocaleDateString("en", {
@@ -370,7 +370,7 @@ export default function ProfessionalDashboard() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid grid-cols-7 gap-4">
-                      {weeklyStats.map((day, index) => (
+                      {weeklyStats.map((day) => (
                         <div key={day.day} className="text-center">
                           <div className="text-sm neuro21-secondary-text mb-2">{day.day}</div>
                           <div className="space-y-2">

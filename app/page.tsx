@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/neuro21/navigation"
 import { TokenDisplay } from "@/components/neuro21/token-display"
-import BrainIcon from "@/assets/brain.svg"
 import {
   Brain,
   Target,

@@ -7,7 +7,7 @@ import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
 import { Navigation } from "@/components/neuro21/navigation"
-import { TokenDisplay } from "@/components/neuro21/token-display"
+import { TokenDisplay } from '@/components/neuro21/token-display'
 import { Dumbbell, Apple, Moon, TrendingUp, Calendar, Target, Award, Flame, CheckCircle, Clock } from "lucide-react"
 import type { JourneyGoal } from "@/lib/types"
 
@@ -38,7 +38,7 @@ const initialGoals: JourneyGoal[] = [
   },
   {
     id: "sleep",
-    name: "sleep",
+    name: "Sleep",
     description: "Quality sleep and rest",
     score: 0,
     maxScore: 10,
@@ -259,7 +259,7 @@ export default function JourneyPage() {
                   </div>
                   <div className="text-center">
                     <div className="text-sm neuro21-secondary-text">
-                      Total this week: <span className="text-white font-medium">58 tokens</span>
+                      Total this week: <span className="text-white font-medium">58 #HEAL</span>
                     </div>
                   </div>
                 </div>
@@ -305,7 +305,7 @@ export default function JourneyPage() {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="neuro21-secondary-text">This Month</span>
-                  <span className="text-white font-medium">342 tokens</span>
+                  <span className="text-white font-medium">342 #HEAL</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="neuro21-secondary-text">Tier Level</span>
@@ -355,7 +355,7 @@ export default function JourneyPage() {
                   <h3 className="text-white font-medium">Ready for a session?</h3>
                   <p className="text-sm neuro21-secondary-text">You have enough tokens to book a consultation</p>
                   <Button className="w-full neuro21-accent-bg hover:bg-yellow-500 text-gray-900">
-                    Book Session (630 tokens)
+                    Book Session (630 #HEAL)
                   </Button>
                 </div>
               </CardContent>

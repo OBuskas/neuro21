@@ -1,16 +1,19 @@
-import { Coins } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Flame } from "lucide-react"
 
 interface TokenDisplayProps {
   balance: number
   className?: string
 }
 
-export function TokenDisplay({ balance, className = "" }: TokenDisplayProps) {
+export function TokenDisplay({ balance = 0, className = "" }: TokenDisplayProps) {
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      <Coins className="w-5 h-5 text-yellow-400" />
-      <span className="font-semibold text-white">{balance.toLocaleString()}</span>
-      <span className="text-gray-400 text-sm">#HEAL</span>
+      <Badge variant="outline" className="gap-1.5 px-3 py-1.5 text-sm">
+        <Flame className="h-4 w-4 text-amber-500" />
+        <span className="font-mono font-medium">{balance.toLocaleString()}</span>
+        <span>#HEAL</span>
+      </Badge>
     </div>
   )
 }
