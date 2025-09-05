@@ -29,7 +29,7 @@ export function Navigation({ userType = "user", tokenBalance = 0 }: NavigationPr
   const navItems = userType === "professional" ? professionalNavItems : userNavItems
 
   return (
-    <nav className="neuro21-card border-b border-gray-700 sticky top-0 z-50">
+    <nav className="neuro21-card border-b border-gray-700 bg-gray-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
