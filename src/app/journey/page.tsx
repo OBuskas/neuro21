@@ -22,7 +22,7 @@ const mockUser = {
 const initialGoals: JourneyGoal[] = [
   {
     id: "exercise",
-    name: "Exercício",
+    name: "Exercise",
     description: "Physical activity and movement",
     score: 0,
     maxScore: 10,
@@ -30,7 +30,7 @@ const initialGoals: JourneyGoal[] = [
   },
   {
     id: "nutrition",
-    name: "Alimentação",
+    name: "Nutrition",
     description: "Healthy eating and nutrition",
     score: 0,
     maxScore: 10,
@@ -38,7 +38,7 @@ const initialGoals: JourneyGoal[] = [
   },
   {
     id: "sleep",
-    name: "Sono",
+    name: "Sleep",
     description: "Quality sleep and rest",
     score: 0,
     maxScore: 10,
